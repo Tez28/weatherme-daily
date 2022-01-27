@@ -5,6 +5,11 @@
 h1 {
     background-image: linear-gradient(to right, rgb(4, 4, 100), rgb(34, 2, 34));
 }
+h3 {
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 20px;
+}
 
 .card {
     margin: 10px;
