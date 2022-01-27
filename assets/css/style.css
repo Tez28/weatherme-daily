@@ -1,0 +1,46 @@
+*  {
+    box-sizing: border-box;
+}
+
+h1 {
+    background-image: linear-gradient(to right, rgb(4, 4, 100), rgb(34, 2, 34));
+}
+
+.card {
+    margin: 10px;
+}
+
+.column1 {
+    background-color: white;
+}
+
+.cityBtn {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.green {
+    background-color: green;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.orange {
+    background-color: orange;
+}
+
+.red {
+    background-color: red;
+}
+
+.icons {
+    height: 70px;
+    width: 70px;
+}
+
+.cardDate {
+    font-size: 25px;
+}
+
