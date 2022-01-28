@@ -1,6 +1,6 @@
 //insert variables
 var city = "Virgina";
-var key = "a3a0bcd52adc4815756e62e0c6d7f4e1"
+var key = "8f702ae5b7c3e96c5aaa5ccc422a9514"
 var cityListEl = $('.cityList');
 
 // defines date and time
@@ -56,13 +56,13 @@ function currentWeather() {
     }).then(function (response){
         $('.cardCity').text(response.name);
         $('.cardDate').text(date);
-        var feelEl = $('<p>').text('Feels Like: ${response.main.feels_like} °F');
+        var feelEl = $('<p>').text(`Feels Like: ${response.main.feels_like} °F`);
         cardToday.append(feelEl);
-        var tempEl = $('<p>').text('Temperature is: ${response.main.temp} °F');
+        var tempEl = $('<p>').text(`Temperature is: ${response.main.temp} °F`);
         cardToday.append(tempEl);
-        var humidityEl = $('<p>').text('Himidity is: ${response.main.temp} %');
+        var humidityEl = $('<p>').text(`Himidity is: ${response.main.temp} %`);
         cardToday.append(humidityEl);
-        var windSpeed = $('<p>').text('Wind Speed is: ${response.main.temp} mph');
+        var windSpeed = $('<p>').text(`Wind Speed is: ${response.main.temp} mph`);
         cardToday.append(windSpeed);
 
         var latiCity = response.coord.lat;
@@ -71,9 +71,26 @@ function currentWeather() {
         var getUvi = `https://api.openweathermap.org/data/2.5/onecall?lat=${latiCity}&lon=${longCity}&exclude=hourly,daily,minutely&appid=${key}`;
 
         $.$ajax({
-            url: getUvi
-        })
-
-    })
-}
+            url: getUvi,
+            method: 'GET',
+        }).then(function (response) {
+            var uviEl = $('<p>').text(`UVI: `);
+            var spanUvi = $('<span>').text(response.current.uvi);
+            uviEl.append(spanUvi);
+            // uvi color chart from google
+            if (uvi >= 0 && uvi <= 2) {
+                spanUvi.attr("class", "green");
+            } else if (uvi > 2 && uvi <= 5) {
+                spanUvi.attr("class", "yellow")
+            } else if (uvi > 5 && uvi <= 7) {
+                spanUvi.attr("class", "orange")
+            } else if (uvi > 7 && uvi <= 10) {
+                spanUvi.attr("class", 'red')
+            } else {
+                spanUvi.attr("class", 'purple')
+            }
+        });
+    });
+    getForecastFive();
+};
 // generate buttons for searched cities
