@@ -14,4 +14,4 @@ https://tez28.github.io/weatherme-daily/
 
 ##App Image
 
-![Screen Shot 2022-01-29 at 1 48 08 PM](https://user-images.githubusercontent.com/92187341/151674094-3ac55792-8757-48e7-b8cc-5d31e38fad33.png)
+![Screen Shot 2022-01-29 at 2 30 57 PM](https://user-images.githubusercontent.com/92187341/151674923-f3601894-d815-4081-93c9-c61cecfd4624.png)
