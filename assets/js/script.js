@@ -118,7 +118,7 @@ function getForecastFive() {
       var fiveCardHeader = $('<div>');
       fiveCardHeader.attr('class', 'card-header');
       var time = moment(response.list[i].dt_txt).format('YYYY-MM-DD');
-      // fiveCardHeader.text(time);
+      fiveCardHeader.text(time);
       fiveCardEl.append(fiveCardHeader);
 
       var cardBody = $('<div>');
