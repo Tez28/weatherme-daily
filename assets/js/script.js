@@ -102,7 +102,7 @@ function getWeather() {
 
 var weekForecastEl = $('.weekForecast');
 function getForecastFive() {
-    var getFiveDay = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${key}`;
+    var getFiveDay = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${key}&units=imperial`;
     $.ajax({
         url: getFiveDay,
         method: 'GET',
