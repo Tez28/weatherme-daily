@@ -18,6 +18,7 @@ $('.search').on("click", function (event) {
     console.log(city);
     cityList.push(city);
     localStorage.setItem('city', JSON.stringify(cityList));
+    localStorage.getItem('city'); 
     weekForecastEl.empty();
     getHist();
     getWeather();
@@ -116,7 +117,7 @@ function getForecastFive() {
 
       var fiveCardHeader = $('<div>');
       fiveCardHeader.attr('class', 'card-header');
-      var time = moment(response.list[i].dt_txt).format('MM-DD-YYYY');
+      var time = moment(response.list[i].dt_txt).format('YYYY-MM-DD');
       // fiveCardHeader.text(time);
       fiveCardEl.append(fiveCardHeader);
 
